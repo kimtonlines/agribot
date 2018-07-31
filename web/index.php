@@ -49,13 +49,13 @@ $botman->hears("acheteur", function (BotMan $bot) {
 });
 
 $botman->hears("deposer", function (BotMan $bot) {
-    $bot->reply(Question::create("Choix:")->addButtons([
-        Button::create("1-Titre de votre annonce")->value("1-Titre de votre annonce"),
-        Button::create("2-Description de l'annonce")->value("2-Description de l'annonce"),
-        Button::create("3-Prix au kilo")->value("3-Prix au kilo"),
-        Button::create("4-Quel est votre budget?")->value("4-Quel est votre budget?"),
-        Button::create("5-Choisir une catégorie")->value("categorie"),
-    ]));
+    $bot->reply(Question::create("Choix:")
+        ->addButton(Button::create("1-Titre de votre annonce")->value("1-Titre de votre annonce"))
+        ->addButton(Button::create("2-Description de l'annonce")->value("2-Description de l'annonce"))
+        ->addButton(Button::create("3-Prix au kilo")->value("3-Prix au kilo"))
+        ->addButton(Button::create("4-Quel est votre budget?")->value("4-Quel est votre budget?"))
+        ->addButton(Button::create("5-Choisir une catégorie")->value("categorie"))
+    );
 });
 
 // Start listening
