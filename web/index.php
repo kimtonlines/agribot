@@ -42,6 +42,12 @@ $botman->hears('bonjour', function (BotMan $bot) {
   ]));
 });
 
+$botman->hears("1", function (BotMan $bot) {
+  $bot->reply(Question::create("Quel achat:")->addButton([
+      Button::create("Turbercule")->value("t"),
+  ]));
+});
+
 
 // Start listening
 $botman->listen();
