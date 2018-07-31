@@ -23,7 +23,7 @@ $config = [
 DriverManager::loadDriver(\BotMan\Drivers\Facebook\FacebookDriver::class);
 
 // Create BotMan instance
-BotManFactory::create($config);
+$botman = BotManFactory::create($config);
 
 // Give the bot something to listen for.
 $botman->hears('bonjour', function (BotMan $bot) {
