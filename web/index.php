@@ -14,6 +14,7 @@ use BotMan\BotMan\Drivers\DriverManager;
 
 use AgriBot\OnboardingConversation;
 use BotMan\Drivers\Facebook\Extensions\ButtonTemplate;
+use BotMan\Drivers\Facebook\Extensions\ElementButton;
 
 $config = [
     'facebook' => [
@@ -31,7 +32,10 @@ $botman = BotManFactory::create($config);
 // Give the bot something to listen for.
 $botman->hears('.*(Bonjour|bonjour|Salut|salut).*', function (BotMan $bot) {
     $bot->reply('Bonjour à vous!');
-    $bot->reply(ButtonTemplate::create("Acheteur"));
+    $bot->reply(ButtonTemplate::create('Do you want to know more about BotMan?')
+        ->addButton(ElementButton::create('Tell me more')->type('postback')->payload('tellmemore'))
+        ->addButton(ElementButton::create('Show me the docs')->url('http://botman.io/'))
+    );
 });
 
 // Start listening
