@@ -52,12 +52,15 @@ $botman->hears("acheteur", function (BotMan $bot) {
 
 $botman->hears("deposer", function (BotMan $bot) {
     $bot->reply(Question::create("Choix:")
-        ->addButton(Button::create("1-Titre de votre annonce")->value("1-Titre de votre annonce"))
-        ->addButton(Button::create("2-Description de l'annonce")->value("2-Description de l'annonce"))
-        ->addButton(Button::create("3-Prix au kilo")->value("3-Prix au kilo"))
-        ->addButton(Button::create("4-Quel est votre budget?")->value("4-Quel est votre budget?"))
-        ->addButton(Button::create("5-Choisir une catégorie")->value("categorie"))
-    );
+        ->addButtons([
+            Button::create("1-Titre de votre annonce")->value("1-Titre de votre annonce"),
+            Button::create("2-Description de l'annonce")->value("2-Description de l'annonce"),
+            Button::create("3-Prix au kilo")->value("3-Prix au kilo"),
+            Button::create("4-Quel est votre budget?")->value("4-Quel est votre budget?"),
+            Button::create("5-Choisir une catégorie")->value("categorie"),
+            Button::create("6-Délai de livraison")->value("livraison"),
+            Button::create("7-Quel est le profit de votre entreprise?")->value("profit"),
+        ]));
 });
 
 $botman->hears("categorie", function (BotMan $bot) {
@@ -66,19 +69,6 @@ $botman->hears("categorie", function (BotMan $bot) {
         Button::create("Produit hors saison")->value("hors"),
         Button::create("Fruit")->value("fruit"),
         Button::create("Légumes")->value("legumes"),
-        Button::create("5-Choisir une catégorie")->value("categorie"),
-        Button::create("6-Délai de livraison")->value("livraison"),
-        Button::create("7-Quel est le profit de votre entreprise?")->value("profit"),
-    ]));
-});
-
-$botman->hears("categorie", function (BotMan $bot) {
-    $bot->reply(Question::create("Produit:")->addButtons([
-        Button::create("Produit de saison")->value("saison"),
-        Button::create("Produit hors saison")->value("hors"),
-        Button::create("Fruit")->value("fruit"),
-        Button::create("Légumes")->value("legumes"),
-        Button::create("5-Choisir une catégorie")->value("categorie"),
     ]));
 });
 
