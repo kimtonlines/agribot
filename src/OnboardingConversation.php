@@ -20,14 +20,9 @@ class OnboardingConversation extends Conversation
 
     protected $email;
 
-    public function askFirstname()
+        public function askFirstname()
     {
-        $question = Question::create("Choix:");
-        $question->addButton([
-            Button::create("Acheteur")->value("1"),
-        ]);
-
-        $this->ask($question, function(Answer $answer) {
+        $this->ask('Hello! What is your firstname?', function(Answer $answer) {
             // Save result
             $this->firstname = $answer->getText();
 
@@ -36,7 +31,7 @@ class OnboardingConversation extends Conversation
         });
     }
 
-    public function askEmail()
+        public function askEmail()
     {
         $this->ask('One more thing - what is your email?', function(Answer $answer) {
             // Save result
