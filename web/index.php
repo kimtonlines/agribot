@@ -13,6 +13,8 @@ use BotMan\BotMan\BotManFactory;
 use BotMan\BotMan\Drivers\DriverManager;
 
 use AgriBot\OnboardingConversation;
+use BotMan\BotMan\Messages\Outgoing\Actions\Button;
+use BotMan\BotMan\Messages\Outgoing\Question;
 use BotMan\Drivers\Facebook\Extensions\ButtonTemplate;
 use BotMan\Drivers\Facebook\Extensions\ElementButton;
 
@@ -30,8 +32,12 @@ DriverManager::loadDriver(\BotMan\Drivers\Facebook\FacebookDriver::class);
 $botman = BotManFactory::create($config);
 
 // Give the bot something to listen for.
-$botman->on('messaging_reads', function (BotMan $bot) {
-    $bot->reply("Cool");
+$botman->hears('', function (BotMan $bot) {
+    $bot->reply("Bienvenue");
+    $question = Question::create("Choix:");
+    $question->addButton([
+        Button::create("Acheteur")->value("1"),
+    ]);
 });
 
 // Start listening
