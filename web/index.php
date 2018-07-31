@@ -39,9 +39,7 @@ $botman->hears('', function (BotMan $bot) {
     $question->addButton([
         Button::create("Acheteur")->value("1"),
     ]);
-    $bot->ask($question, function (Answer $answer) {
-
-    });
+    $bot->reply($question);
 });
 
 // Start listening
