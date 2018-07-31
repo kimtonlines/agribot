@@ -35,12 +35,7 @@ $botman = BotManFactory::create($config);
 
 // Give the bot something to listen for.
 $botman->hears('demarer', function (BotMan $bot) {
-    // Access user
-    $user = $bot->getUser();
-// Access first name
-    $firstname = $user->getFirstName();
 
-    $bot->reply($firstname);
   $bot->reply(Question::create("Quick replie 3:")->addButtons([
       Button::create("Acheteur")->value("acheteur"),
       Button::create("Coopérative")->value("Coopérative"),
@@ -63,6 +58,46 @@ $botman->hears("deposer", function (BotMan $bot) {
         ->addButton(Button::create("4-Quel est votre budget?")->value("4-Quel est votre budget?"))
         ->addButton(Button::create("5-Choisir une catégorie")->value("categorie"))
     );
+});
+
+$botman->hears("categorie", function (BotMan $bot) {
+    $bot->reply(Question::create("Produit:")->addButtons([
+        Button::create("Produit de saison")->value("saison"),
+        Button::create("Produit hors saison")->value("hors"),
+        Button::create("Fruit")->value("fruit"),
+        Button::create("Légumes")->value("legumes"),
+        Button::create("5-Choisir une catégorie")->value("categorie"),
+        Button::create("6-Délai de livraison")->value("livraison"),
+        Button::create("7-Quel est le profit de votre entreprise?")->value("profit"),
+    ]));
+});
+
+$botman->hears("categorie", function (BotMan $bot) {
+    $bot->reply(Question::create("Produit:")->addButtons([
+        Button::create("Produit de saison")->value("saison"),
+        Button::create("Produit hors saison")->value("hors"),
+        Button::create("Fruit")->value("fruit"),
+        Button::create("Légumes")->value("legumes"),
+        Button::create("5-Choisir une catégorie")->value("categorie"),
+    ]));
+});
+
+$botman->hears("livraison", function (BotMan $bot) {
+    $bot->reply(Question::create("Choix:")->addButtons([
+        Button::create("Urgent")->value("urgent"),
+        Button::create("Normal")->value("normals"),
+        Button::create("Moyen terme")->value("mterme"),
+        Button::create("long terme")->value("lterme"),
+    ]));
+});
+
+$botman->hears("profit", function (BotMan $bot) {
+    $bot->reply(Question::create("Vous etes:")->addButtons([
+        Button::create("Particulier")->value("particulier"),
+        Button::create("Coopérative")->value("cooperative"),
+        Button::create("acheteur")->value("acheteur"),
+        Button::create("agriculteur")->value("agriculteur"),
+    ]));
 });
 
 // Start listening
