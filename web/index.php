@@ -32,8 +32,15 @@ DriverManager::loadDriver(\BotMan\Drivers\Facebook\FacebookDriver::class);
 // Create BotMan instance
 $botman = BotManFactory::create($config);
 
+
 // Give the bot something to listen for.
 $botman->hears('demarer', function (BotMan $bot) {
+    // Access user
+    $user = $bot->getUser();
+// Access first name
+    $firstname = $user->getFirstName();
+
+    $bot->reply($firstname);
   $bot->reply(Question::create("Quick replie 3:")->addButtons([
       Button::create("Acheteur")->value("acheteur"),
       Button::create("Coopérative")->value("Coopérative"),
