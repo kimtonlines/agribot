@@ -16,9 +16,9 @@ use BotMan\BotMan\Messages\Outgoing\Question;
 
 class OnboardingConversation extends Conversation
 {
-    protected $firstname;
+    public $firstname;
 
-    protected $email;
+    public $email;
 
         public function askFirstname()
     {
