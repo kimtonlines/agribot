@@ -34,13 +34,16 @@ $botman = BotManFactory::create($config);
 
 // Give the bot something to listen for.
 $botman->hears('bonjour', function (BotMan $bot) {
-  $bot->reply(Question::create("Choix:")->addButton(
-      Button::create("Acheteur")->value("1")
-  ));
+  $bot->reply(Question::create("Choix:")->addButtons([
+      Button::create("Acheteur")->value("1"),
+      Button::create("Coopérative")->value("2"),
+      Button::create("Agriculteur")->value("3"),
+      Button::create("Agriculteur")->value("3"),
+  ]));
 });
 
 $botman->hears("1", function (BotMan $bot) {
-  $bot->reply(Question::create("Quel achat:")->addButton(
+  $bot->reply(Question::create("Quel produit voulez vous acheter?:")->addButton(
       Button::create("Turbercule")->value("t")
   ));
 });
