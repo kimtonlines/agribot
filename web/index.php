@@ -75,7 +75,7 @@ $botman->hears("categorie", function (BotMan $bot) {
 $botman->hears("livraison", function (BotMan $bot) {
     $bot->reply(Question::create("Choix:")->addButtons([
         Button::create("Urgent")->value("urgent"),
-        Button::create("Normal")->value("normals"),
+        Button::create("Normal")->value("normal"),
         Button::create("Moyen terme")->value("mterme"),
         Button::create("long terme")->value("lterme"),
     ]));
@@ -83,10 +83,10 @@ $botman->hears("livraison", function (BotMan $bot) {
 
 $botman->hears("profit", function (BotMan $bot) {
     $bot->reply(Question::create("Vous etes:")->addButtons([
-        Button::create("Particulier")->value("particulier"),
-        Button::create("Coopérative")->value("cooperative"),
-        Button::create("acheteur")->value("acheteur"),
-        Button::create("agriculteur")->value("agriculteur"),
+        Button::create("Particulier")->value("pparticulier"),
+        Button::create("Coopérative")->value("pcooperative"),
+        Button::create("acheteur")->value("pacheteur"),
+        Button::create("agriculteur")->value("pagriculteur"),
     ]));
 });
 
