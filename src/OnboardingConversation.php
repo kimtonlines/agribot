@@ -24,7 +24,7 @@ class OnboardingConversation extends Conversation
             // Save result
             $this->firstname = $answer->getText();
 
-            $this->bot->reply('Nice to meet you '.$this->firstname);
+            $this->say('Nice to meet you '.$this->firstname);
             $this->askEmail();
         });
     }
