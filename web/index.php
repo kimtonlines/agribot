@@ -13,6 +13,7 @@ use BotMan\BotMan\BotManFactory;
 use BotMan\BotMan\Drivers\DriverManager;
 
 use AgriBot\OnboardingConversation;
+use BotMan\BotMan\Messages\Incoming\Answer;
 use BotMan\BotMan\Messages\Outgoing\Actions\Button;
 use BotMan\BotMan\Messages\Outgoing\Question;
 use BotMan\Drivers\Facebook\Extensions\ButtonTemplate;
@@ -38,6 +39,9 @@ $botman->hears('', function (BotMan $bot) {
     $question->addButton([
         Button::create("Acheteur")->value("1"),
     ]);
+    $bot->ask($question, function (Answer $answer) {
+
+    });
 });
 
 // Start listening
