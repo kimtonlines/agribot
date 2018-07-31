@@ -20,12 +20,7 @@ class OnboardingConversation extends Conversation
 
     public function askFirstname()
     {
-        $this->ask("Bienvenue à vous, qui etes vous?", function(Answer $answer) {
-            $this->bot->reply(ButtonTemplate::create('')
-                ->addButton(ElementButton::create('Acheteurs')->type('postback')->payload('tellmemore'))
-                ->addButton(ElementButton::create('Copérative')->url('http://botman.io/'))
-                ->addButton(ElementButton::create('Agriculteur')->url('http://botman.io/'))
-            );
+        $this->ask('Hello! What is your firstname?', function(Answer $answer) {
             // Save result
             $this->firstname = $answer->getText();
 
