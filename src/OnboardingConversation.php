@@ -11,6 +11,8 @@ namespace AgriBot;
 
 use BotMan\BotMan\Messages\Conversations\Conversation;
 use BotMan\BotMan\Messages\Incoming\Answer;
+use BotMan\BotMan\Messages\Outgoing\Actions\Button;
+use BotMan\BotMan\Messages\Outgoing\Question;
 
 class OnboardingConversation extends Conversation
 {
@@ -20,7 +22,12 @@ class OnboardingConversation extends Conversation
 
     public function askFirstname()
     {
-        $this->ask('Hello! What is your firstname?', function(Answer $answer) {
+        $question = Question::create("Choix:");
+        $question->addButton([
+            Button::create("Acheteur")->value("1"),
+        ]);
+
+        $this->ask($question, function(Answer $answer) {
             // Save result
             $this->firstname = $answer->getText();
 

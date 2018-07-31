@@ -34,12 +34,7 @@ $botman = BotManFactory::create($config);
 
 // Give the bot something to listen for.
 $botman->hears('', function (BotMan $bot) {
-    $bot->reply("Bienvenue");
-    $question = Question::create("Choix:");
-    $question->addButton([
-        Button::create("Acheteur")->value("1"),
-    ]);
-    $bot->reply($question);
+    $bot->startConversation(new OnboardingConversation);
 });
 
 // Start listening
