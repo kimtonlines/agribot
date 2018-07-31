@@ -2,5 +2,11 @@
     "require": {
         "botman/botman": "^2.3",
         "botman/driver-facebook": "^1.8"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "AgriBot\\": "src/"
+        }
     }
 }
