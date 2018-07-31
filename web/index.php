@@ -43,12 +43,12 @@ $botman->hears("bonjour", function (BotMan $bot) {
 
 $botman->hears("Acheteur", function (BotMan $bot) {
     $bot->reply(Question::create("Choix:")->addButtons([
-        Button::create("1-Déposer une annonce")->value("1-Déposer une annonce"),
+        Button::create("1-Déposer une annonce")->value("Deposer"),
         Button::create("2-Voir toutes les annonces")->value("2-Voir toutes les annonces"),
     ]));
 });
 
-$botman->hears("1-Déposer une annonce", function (BotMan $bot) {
+$botman->hears("Deposer", function (BotMan $bot) {
     $bot->reply(Question::create("")->addButtons([
         Button::create("1-Titre de votre annonce")->value("1-Titre de votre annonce"),
         Button::create("2-Description de l'annonce")->value("2-Description de l'annonce"),
