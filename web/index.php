@@ -34,7 +34,11 @@ $botman = BotManFactory::create($config);
 
 // Give the bot something to listen for.
 $botman->hears('bonjour', function (BotMan $bot) {
-    $bot->startConversation(new OnboardingConversation);
+  $bot->reply("Bonjour Monsieur");
+});
+
+$botman->hears('qui est tu.', function (BotMan $bot) {
+  $bot->reply("Je suis un Chatbot");
 });
 
 // Start listening
