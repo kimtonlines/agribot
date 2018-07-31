@@ -6,7 +6,7 @@
  * Time: 18:15
  */
 
-require_once __DIR__.'vendor/autoload.php';
+require('../vendor/autoload.php');
 
 use BotMan\BotMan\BotMan;
 use BotMan\BotMan\BotManFactory;
