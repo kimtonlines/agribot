@@ -29,12 +29,7 @@ $botman = BotManFactory::create($config);
 
 // Give the bot something to listen for.
 $botman->hears('.*(Bonjour|bonjour|Salut|salut).*', function (BotMan $bot) {
-    // Access user
-    $user = $bot->getUser();
-// Access first name
-    $firstname = $user->getFirstName();
-
-    $bot->reply('Bonjour, vous vous appelez '.$firstname.'.');
+    $bot->reply('Bonjour à vous!');
 });
 
 // Start listening
