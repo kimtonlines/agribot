@@ -1,0 +1,6 @@
+{
+    "require": {
+        "botman/botman": "^2.3",
+        "botman/driver-facebook": "^1.8"
+    }
+}
