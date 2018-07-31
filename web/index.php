@@ -49,7 +49,7 @@ $botman->hears("Acheteur", function (BotMan $bot) {
 });
 
 $botman->hears("Deposer", function (BotMan $bot) {
-    $bot->reply(Question::create("")->addButtons([
+    $bot->reply(Question::create("Choix:")->addButtons([
         Button::create("1-Titre de votre annonce")->value("1-Titre de votre annonce"),
         Button::create("2-Description de l'annonce")->value("2-Description de l'annonce"),
         Button::create("3-Prix au kilo")->value("3-Prix au kilo"),
