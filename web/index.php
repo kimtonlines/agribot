@@ -30,8 +30,12 @@ DriverManager::loadDriver(\BotMan\Drivers\Facebook\FacebookDriver::class);
 $botman = BotManFactory::create($config);
 
 // Give the bot something to listen for.
-$botman->hears('', function (BotMan $bot) {
-    $bot->startConversation(new OnboardingConversation);
+$botman->ask('Bienvenue à vous, qui etes vous?', function (BotMan $bot) {
+    $bot->reply(ButtonTemplate::create('')
+        ->addButton(ElementButton::create('Acheteurs')->type('postback')->payload('tellmemore'))
+        ->addButton(ElementButton::create('Copérative')->url('http://botman.io/'))
+        ->addButton(ElementButton::create('Agriculteur')->url('http://botman.io/'))
+    );
 });
 
 // Start listening
