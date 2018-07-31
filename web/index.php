@@ -28,7 +28,7 @@ DriverManager::loadDriver(\BotMan\Drivers\Facebook\FacebookDriver::class);
 $botman = BotManFactory::create($config);
 
 // Give the bot something to listen for.
-$botman->hears('bonjour', function (BotMan $bot) {
+$botman->hears('.*(Bonjour|bonjour|Salut|salut).*', function (BotMan $bot) {
     $bot->startConversation(new OnboardingConversation);
 });
 
