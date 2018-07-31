@@ -30,8 +30,8 @@ DriverManager::loadDriver(\BotMan\Drivers\Facebook\FacebookDriver::class);
 $botman = BotManFactory::create($config);
 
 // Give the bot something to listen for.
-$botman->on('messaging_reads', function (BotMan $bot) {
-    $bot->reply("Cool");
+$botman->on('messaging_reads', function ($playload, $botman) {
+    $botman->reply("Cool");
 });
 
 // Start listening
