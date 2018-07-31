@@ -33,19 +33,29 @@ DriverManager::loadDriver(\BotMan\Drivers\Facebook\FacebookDriver::class);
 $botman = BotManFactory::create($config);
 
 // Give the bot something to listen for.
-$botman->hears('bonjour', function (BotMan $bot) {
-  $bot->reply(Question::create("Choix:")->addButtons([
-      Button::create("Acheteur")->value("1"),
-      Button::create("Coopérative")->value("2"),
-      Button::create("Agriculteur")->value("3"),
-      Button::create("Agriculteur")->value("3"),
+$botman->hears("bonjour", function (BotMan $bot) {
+  $bot->reply(Question::create("Quick replie 3:")->addButtons([
+      Button::create("Acheteur")->value("Acheteur"),
+      Button::create("Coopérative")->value("Coopérative"),
+      Button::create("Agriculteur")->value("Agriculteur"),
   ]));
 });
 
-$botman->hears("1", function (BotMan $bot) {
-  $bot->reply(Question::create("Quel produit voulez vous acheter?:")->addButton(
-      Button::create("Turbercule")->value("t")
-  ));
+$botman->hears("Acheteur", function (BotMan $bot) {
+    $bot->reply(Question::create("Choix:")->addButtons([
+        Button::create("1-Déposer une annonce")->value("1-Déposer une annonce"),
+        Button::create("2-Voir toutes les annonces")->value("2-Voir toutes les annonces"),
+    ]));
+});
+
+$botman->hears("1-Déposer une annonce", function (BotMan $bot) {
+    $bot->reply(Question::create("")->addButtons([
+        Button::create("1-Titre de votre annonce")->value("1-Titre de votre annonce"),
+        Button::create("2-Description de l'annonce")->value("2-Description de l'annonce"),
+        Button::create("3-Prix au kilo")->value("3-Prix au kilo"),
+        Button::create("4-Quel est votre budget?")->value("4-Quel est votre budget?"),
+        Button::create("5-Choisir une catégorie")->value("5-Choisir une catégorie"),
+    ]));
 });
 
 // Start listening
