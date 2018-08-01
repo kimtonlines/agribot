@@ -47,9 +47,9 @@ $botman->hears('demarer', function (BotMan $bot) {
 });
 
 $botman->hears("acheteur", function (BotMan $bot) {
-    $bot->reply(Question::create("Choix:")->addButtons([
-        Button::create("1-Déposer une annonce")->value("deposer"),
-        Button::create("2-Voir toutes les annonces")->value("2-Voir toutes les annonces"),
+    $bot->reply(Question::create("")->addButtons([
+        Button::create("Déposer une annonce")->value("deposer"),
+        Button::create("Voir toutes les annonces")->value("voir"),
     ]));
 });
 

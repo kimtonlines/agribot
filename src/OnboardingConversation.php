@@ -19,21 +19,49 @@ class OnboardingConversation extends Conversation
 
         public function askAnnonce()
     {
-        $this->ask('Quel est le titre de votre annoce?', function(Answer $answer) {
+        $this->ask('Titre de votre annoce?', function(Answer $answer) {
             // Save result
-            $annonce = $answer->getText();
-            $this->say($annonce);
+            $titre = $answer->getText();
             $this->askDescription();
         });
     }
 
         public function askDescription()
     {
-        $this->ask('Decrivez votre annonce', function(Answer $answer) {
+        $this->ask('Decrivez votre annonce?', function(Answer $answer) {
             // Save result
             $description = $answer->getText();
+            $this->askPrix();
+        });
+    }
 
-            $this->say($description);
+       public function askPrix()
+    {
+        $this->ask('Prix au kilo?', function(Answer $answer) {
+            // Save result
+            $prix = $answer->getText();
+
+            $this->askBudget();
+        });
+    }
+
+        public function askBudget()
+    {
+        $this->ask('Votre budget?', function(Answer $answer) {
+            // Save result
+            $budget = $answer->getText();
+
+            $this->askCtegorie();
+        });
+    }
+
+        public function askCtegorie()
+    {
+        $this->ask('Choisir une catégorie?', function(Answer $answer) {
+            // Save result
+            $budget = $answer->getText();
+
+            //$this->say($description);
         });
     }
 
