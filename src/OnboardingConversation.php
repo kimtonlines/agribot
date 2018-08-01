@@ -71,7 +71,7 @@ class OnboardingConversation extends Conversation
     {
         $this->ask('Voulez vous continuer?', function(Answer $answer) {
 
-            $annonce = new Annonce();
+           /* $annonce = new Annonce();
 
             $annonce->setTitle($this->title);
             $slug = str_shuffle($this->title);
@@ -85,7 +85,7 @@ class OnboardingConversation extends Conversation
 
             $annonce->add();
 
-            $this->say($annonce->getTitle());
+            $this->say($annonce->getTitle());*/
             // Save result
             $reponse = $answer->getText();
 
