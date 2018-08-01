@@ -21,12 +21,25 @@ use BotMan\Drivers\Facebook\Extensions\ListTemplate;
 
 class OnboardingConversation extends Conversation
 {
+        private $annonce;
 
-        public function askAnnonce()
+        public function __construct()
+        {
+            $this->annonce = new Annonce();
+            $this->annonce->setEtatId(1);
+            $this->annonce->setCategoryId(1);
+            $this->annonce->setUserId(1);
+
+        }
+
+    public function askAnnonce()
     {
         $this->ask('Titre de votre annoce?', function(Answer $answer) {
             // Save result
-            $titre = $answer->getText();
+            $this->annonce->setTitle($answer->getText());
+            $slug = str_shuffle($answer->getText());
+            $this->annonce->setSlug($slug);
+
             $this->askDescription();
         });
     }
@@ -35,7 +48,7 @@ class OnboardingConversation extends Conversation
     {
         $this->ask('Decrivez votre annonce?', function(Answer $answer) {
             // Save result
-            $description = $answer->getText();
+            $this->annonce->setDescription($answer->getText());
             $this->askPrix();
         });
     }
@@ -44,7 +57,7 @@ class OnboardingConversation extends Conversation
     {
         $this->ask('Prix au kilo?', function(Answer $answer) {
             // Save result
-            $prix = $answer->getText();
+            $this->annonce->setPrice($answer->getText());
 
             $this->askBudget();
         });
@@ -54,7 +67,7 @@ class OnboardingConversation extends Conversation
     {
         $this->ask('Votre budget?', function(Answer $answer) {
             // Save result
-            $budget = $answer->getText();
+            $this->annonce->setBudget($answer->getText());
 
             $this->askContinuer();
         });
@@ -65,6 +78,7 @@ class OnboardingConversation extends Conversation
         $this->ask('Voulez vous continuer?', function(Answer $answer) {
             // Save result
             $reponse = $answer->getText();
+            $this->annonce->add();
             });
     }
 
