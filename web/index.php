@@ -18,6 +18,8 @@ use BotMan\BotMan\Messages\Outgoing\Actions\Button;
 use BotMan\BotMan\Messages\Outgoing\Question;
 
 use BotMan\BotMan\Cache\SymfonyCache;
+use BotMan\Drivers\Facebook\Extensions\ButtonTemplate;
+use BotMan\Drivers\Facebook\Extensions\ElementButton;
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 
 $adapter = new FilesystemAdapter();
@@ -47,10 +49,12 @@ $botman->hears('demarer', function (BotMan $bot) {
 });
 
 $botman->hears("acheteur", function (BotMan $bot) {
-    $bot->reply(Question::create("Annonce?")->addButtons([
-        Button::create("Déposer une annonce")->value("deposer"),
-        Button::create("Voir toutes les annonces")->value("voir"),
-    ]));
+    $bot->reply(Question::create("Annonce?")
+        ->addButton(Button::create("Déposer une annonce")->value("deposer"))
+    );
+    $bot->reply(ButtonTemplate::create("Annonce?")
+        ->addButton(ElementButton::create("Déposer une annonce")->url("http://agrivoire.herokuapp.com/Annonce"))
+    );
 });
 
 $botman->hears("deposer", function (BotMan $bot) {
