@@ -41,7 +41,7 @@ DriverManager::loadDriver(\BotMan\Drivers\Facebook\FacebookDriver::class);
 $botman = BotManFactory::create($config, new SymfonyCache($adapter));
 
 // Give the bot something to listen for.
-$botman->hears('demarer', function (BotMan $bot) {
+$botman->hears('demarrer', function (BotMan $bot) {
 
     $bot->reply(Question::create("Vous etes?")->addButtons([
         Button::create("Acheteur")->value("acheteur"),

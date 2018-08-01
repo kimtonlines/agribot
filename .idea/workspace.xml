@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="617e4617-33f3-4f90-8ded-07208426a732" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/OnboardingConversation.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/OnboardingConversation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="OnboardingConversation.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="OnboardingConversation.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/OnboardingConversation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="64" column="68" selection-start-line="64" selection-start-column="68" selection-end-line="64" selection-end-column="68" />
+            <state relative-caret-position="226">
+              <caret line="68" column="5" lean-forward="true" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
               <folding>
                 <element signature="e#109#134#0#PHP" expanded="true" />
               </folding>
@@ -28,11 +28,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="67" column="28" lean-forward="true" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="28" />
+            <state relative-caret-position="385">
+              <caret line="45" column="45" lean-forward="true" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
               <folding>
                 <element signature="e#124#159#0#PHP" expanded="true" />
               </folding>
@@ -53,8 +53,8 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/web/index.php" />
         <option value="$PROJECT_DIR$/src/OnboardingConversation.php" />
+        <option value="$PROJECT_DIR$/web/index.php" />
       </list>
     </option>
   </component>
@@ -164,12 +164,12 @@
       <option name="presentableId" value="Default" />
       <updated>1533060756013</updated>
       <workItem from="1533060764819" duration="17433000" />
-      <workItem from="1533112226747" duration="15420000" />
+      <workItem from="1533112226747" duration="16245000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32853000" />
+    <option name="totallyTimeSpent" value="33678000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -300,22 +300,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.php">
+    <entry file="file://$PROJECT_DIR$/src/OnboardingConversation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="67" column="28" lean-forward="true" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="28" />
+        <state relative-caret-position="226">
+          <caret line="68" column="5" lean-forward="true" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
           <folding>
-            <element signature="e#124#159#0#PHP" expanded="true" />
+            <element signature="e#109#134#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/OnboardingConversation.php">
+    <entry file="file://$PROJECT_DIR$/web/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="64" column="68" selection-start-line="64" selection-start-column="68" selection-end-line="64" selection-end-column="68" />
+        <state relative-caret-position="385">
+          <caret line="45" column="45" lean-forward="true" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
           <folding>
-            <element signature="e#109#134#0#PHP" expanded="true" />
+            <element signature="e#124#159#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
