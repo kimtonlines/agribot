@@ -93,7 +93,7 @@ $botman->hears('categorie', function (BotMan $bot) {
         )
         ->addElement(
             Element::create('Légumes')
-                ->image('https://agrivoire.herokuapp.com/public/pages/July2018/SugarCane-cropped.png')
+                ->image('https://agrivoire.herokuapp.com/public/pages/July2018/wheat-576549_1280-cropped.png')
                 ->addButton(ElementButton::create('Choisir')
                     ->payload('plegumes')->type('postback'))
         )
