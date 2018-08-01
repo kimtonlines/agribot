@@ -48,24 +48,15 @@ $botman->hears("acheteur", function (BotMan $bot) {
 });
 
 $botman->hears("deposer", function (BotMan $bot) {
-
-    $bot->ask('Quel est le titre de votre annonce?', function (Answer $answer) {
-
-    });
 });
 
-$botman->hears('{annonce}', function (BotMan $bot, $annonce) {
-
-    if($annonce)
-    $bot->ask('Décrivez votre annonce?', function (Answer $answer) {
-    });
+$botman->hears('Quel est le titre de votre annonce? {annonce}', function (BotMan $bot, $annonce) {
+    $bot->reply($annonce);
 });
 
-$botman->hears('{description}', function (BotMan $bot, $description) {
+$botman->hears('Décrivez votre annonce? {description}', function (BotMan $bot, $description) {
 
-    if($description)
-    $bot->ask('Quel est votre prix au kilo?', function (Answer $answer) {
-    });
+    $bot->reply($description);
 });
 
     /* $bot->reply(Question::create("Choix:")
