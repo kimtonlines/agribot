@@ -36,7 +36,8 @@ class OnboardingConversation extends Conversation
     {
         $this->ask('Titre de votre annoce?', function(Answer $answer) {
             // Save result
-            $this->annonce->setTitle($answer->getText());
+            $title = $answer->getText();
+            $this->annonce->setTitle($title);
             $this->say($this->annonce->getTitle());
             $slug = str_shuffle($answer->getText());
             $this->annonce->setSlug($slug);
