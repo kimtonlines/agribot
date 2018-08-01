@@ -39,7 +39,7 @@ class OnboardingConversation extends Conversation
 
     public function askAnnonce()
     {
-        $this->ask('Titre de votre annoce?', function(Answer $answer) {
+        $this->ask('Titre de votre annonce?', function(Answer $answer) {
             // Save result
             $this->title = $answer->getText();
 
