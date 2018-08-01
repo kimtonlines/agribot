@@ -62,10 +62,9 @@ class OnboardingConversation extends Conversation
 
         public function askContinuer()
     {
-        $this->ask('Voulez vous continuer?', function(Answer $answer, IncomingMessage $message) {
+        $this->ask('Voulez vous continuer?', function(Answer $answer) {
             // Save result
             $reponse = $answer->getText();
-            $this->stopsConversation($message);
             });
     }
 
