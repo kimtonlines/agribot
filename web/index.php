@@ -69,13 +69,13 @@ $botman->hears("Choisir une catégorie?", function (BotMan $bot) {
         ->addElement(
             Element::create('Produit de saison')
                 ->image('https://agrivoire.herokuapp.com/public/pages/July2018/sack-309849_640-cropped.png')
-                ->addButton(ElementButton::create('Plus')
+                ->addButton(ElementButton::create('Choisir')
                     ->payload('psaison')->type('postback'))
         )
         ->addElement(
             Element::create('Produit hors saison')
                 ->image('https://agrivoire.herokuapp.com/public/pages/July2018/SugarCane-cropped.png')
-                ->addButton(ElementButton::create('Plus')
+                ->addButton(ElementButton::create('Choisir')
                     ->payload('psaison')->type('postback'))
         )
     );
