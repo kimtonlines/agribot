@@ -95,14 +95,14 @@ $botman->hears("profit", function (BotMan $bot) {
     ]));
 });*/
 
-$botman->hears("annonce", function (BotMan $bot) {
+$botman->hears("$annonce", function (BotMan $bot) {
     $bot->ask('Descrivez votre annonce?', function(Answer $answer) {
         // Save result
         $description = $answer->getText();
     });
 });
 
-$botman->hears("description", function (BotMan $bot) {
+$botman->hears("$description", function (BotMan $bot) {
     $bot->ask('Quel est votre prix au kilo?', function(Answer $answer) {
         // Save result
         $prix = $answer->getText();

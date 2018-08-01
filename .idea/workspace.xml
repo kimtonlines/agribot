@@ -19,8 +19,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="38" column="31" lean-forward="true" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
+            <state relative-caret-position="479">
+              <caret line="113" column="18" lean-forward="true" selection-start-line="113" selection-start-column="18" selection-end-line="113" selection-end-column="18" />
               <folding>
                 <element signature="e#124#149#0#PHP" expanded="true" />
               </folding>
@@ -178,12 +178,12 @@
       <option name="presentableId" value="Default" />
       <updated>1533060756013</updated>
       <workItem from="1533060764819" duration="17433000" />
-      <workItem from="1533112226747" duration="1414000" />
+      <workItem from="1533112226747" duration="1646000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18847000" />
+    <option name="totallyTimeSpent" value="19079000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -300,13 +300,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/botman/botman/src/BotMan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="510" column="20" selection-start-line="510" selection-start-column="20" selection-end-line="510" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/OnboardingConversation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="529">
@@ -317,10 +310,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/botman/botman/src/BotMan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="262" column="20" selection-start-line="262" selection-start-column="20" selection-end-line="262" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="38" column="31" lean-forward="true" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
+        <state relative-caret-position="479">
+          <caret line="113" column="18" lean-forward="true" selection-start-line="113" selection-start-column="18" selection-end-line="113" selection-end-column="18" />
           <folding>
             <element signature="e#124#149#0#PHP" expanded="true" />
           </folding>
