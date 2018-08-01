@@ -30,7 +30,9 @@ DriverManager::loadDriver(\BotMan\Drivers\Facebook\FacebookDriver::class);
 // Create BotMan instance
 $botman = BotManFactory::create($config);
 
-
+global $annonce;
+global $description;
+global $prix;
 // Give the bot something to listen for.
 $botman->hears('demarer', function (BotMan $bot) {
 
@@ -53,16 +55,6 @@ $botman->hears("deposer", function (BotMan $bot) {
     $bot->ask('Quel est le titre de votre annonce?', function(Answer $answer) {
         // Save result
         $annonce = $answer->getText();
-    });
-
-    $bot->ask('Descrivez votre annonce?', function(Answer $answer) {
-        // Save result
-        $description = $answer->getText();
-    });
-
-    $bot->ask('Quel est votre prix au kilo?', function(Answer $answer) {
-        // Save result
-        $prix = $answer->getText();
     });
    /* $bot->reply(Question::create("Choix:")
         ->addButtons([
@@ -102,6 +94,21 @@ $botman->hears("profit", function (BotMan $bot) {
         Button::create("agriculteur")->value("pagriculteur"),
     ]));
 });*/
+
+$botman->hears($annonce, function (BotMan $bot) {
+    $bot->ask('Descrivez votre annonce?', function(Answer $answer) {
+        // Save result
+        $description = $answer->getText();
+    });
+});
+
+$botman->hears($description, function (BotMan $bot) {
+    $bot->ask('Quel est votre prix au kilo?', function(Answer $answer) {
+        // Save result
+        $prix = $answer->getText();
+    });
+});
+
 
 // Start listening
 $botman->listen();
