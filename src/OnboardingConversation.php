@@ -55,7 +55,7 @@ class OnboardingConversation extends Conversation
             $budget = $answer->getText();
 
             //$this->askCtegorie();
-            $this->stopsConversation("Choisir une catégorie?");
+            $this->say('Choisir une catégorie?');
         });
     }
 
