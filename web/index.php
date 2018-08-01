@@ -85,6 +85,18 @@ $botman->hears('categorie', function (BotMan $bot) {
                 ->addButton(ElementButton::create('Choisir')
                     ->payload('psaison')->type('postback'))
         )
+        ->addElement(
+            Element::create('Fruit')
+                ->image('https://agrivoire.herokuapp.com/public/pages/July2018/legume-cropped.png')
+                ->addButton(ElementButton::create('Choisir')
+                    ->payload('pfruit')->type('postback'))
+        )
+        ->addElement(
+            Element::create('Légumes')
+                ->image('https://agrivoire.herokuapp.com/public/pages/July2018/SugarCane-cropped.png')
+                ->addButton(ElementButton::create('Choisir')
+                    ->payload('plegumes')->type('postback'))
+        )
     );
 });
 
