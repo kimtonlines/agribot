@@ -59,6 +59,10 @@ $botman->hears("acheteur", function (BotMan $bot) {
 
 $botman->hears("deposer", function (BotMan $bot) {
     $bot->startConversation(new OnboardingConversation);
+
+});
+
+$botman->hears("Choisir une catégorie?", function (BotMan $bot) {
     $bot->reply(ListTemplate::create()
         ->useCompactView()
         ->addGlobalButton(ElementButton::create('voir plus')->url('http://agrivoire.herokuapp.com/sol-culture'))
@@ -75,7 +79,6 @@ $botman->hears("deposer", function (BotMan $bot) {
                     ->payload('psaison')->type('postback'))
         )
     );
-
 });
 
     /* $bot->reply(Question::create("Choix:")
