@@ -12,6 +12,7 @@ namespace AgriBot;
 use BotMan\BotMan\BotMan;
 use BotMan\BotMan\Messages\Conversations\Conversation;
 use BotMan\BotMan\Messages\Incoming\Answer;
+use BotMan\BotMan\Messages\Incoming\IncomingMessage;
 use BotMan\BotMan\Messages\Outgoing\Actions\Button;
 use BotMan\BotMan\Messages\Outgoing\Question;
 use BotMan\Drivers\Facebook\Extensions\Element;
@@ -61,9 +62,10 @@ class OnboardingConversation extends Conversation
 
         public function askContinuer()
     {
-        $this->ask('Voulez vous continuer?', function(Answer $answer) {
+        $this->ask('Voulez vous continuer?', function(Answer $answer, IncomingMessage $message) {
             // Save result
             $reponse = $answer->getText();
+            $this->stopsConversation($message);
             });
     }
 
