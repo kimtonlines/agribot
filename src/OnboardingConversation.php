@@ -21,7 +21,12 @@ use BotMan\Drivers\Facebook\Extensions\ListTemplate;
 
 class OnboardingConversation extends Conversation
 {
-        private $annonce;
+        protected $annonce;
+
+        protected $title;
+        protected $description;
+        protected $prix;
+        protected $budget;
 
         public function __construct()
         {
@@ -36,10 +41,7 @@ class OnboardingConversation extends Conversation
     {
         $this->ask('Titre de votre annoce?', function(Answer $answer) {
             // Save result
-            $titre = $answer->getText();
-            $this->annonce->setTitle($titre);
-            $slug = str_shuffle($titre);
-            $this->annonce->setSlug($slug);
+            $this->title = $answer->getText();
 
             $this->askDescription();
         });
@@ -49,8 +51,8 @@ class OnboardingConversation extends Conversation
     {
         $this->ask('Decrivez votre annonce?', function(Answer $answer) {
             // Save result
-            $description = $answer->getText();
-            $this->annonce->setDescription($description);
+            $this->description = $answer->getText();
+
             $this->askPrix();
         });
     }
@@ -59,8 +61,7 @@ class OnboardingConversation extends Conversation
     {
         $this->ask('Prix au kilo?', function(Answer $answer) {
             // Save result
-            $prix = $answer->getText();
-            $this->annonce->setPrice($prix);
+            $this->prix = $answer->getText();
 
             $this->askBudget();
         });
@@ -70,8 +71,7 @@ class OnboardingConversation extends Conversation
     {
         $this->ask('Votre budget?', function(Answer $answer) {
             // Save result
-            $budget = $answer->getText();
-            $this->annonce->setBudget($$budget);
+            $this->budget = $answer->getText();
 
             $this->askContinuer();
         });
@@ -82,6 +82,13 @@ class OnboardingConversation extends Conversation
         $this->ask('Voulez vous continuer?', function(Answer $answer) {
             // Save result
             $reponse = $answer->getText();
+
+            $this->annonce->setTitle($this->title);
+            $slug = str_shuffle($this->title);
+            $this->annonce->setSlug($slug);
+            $this->annonce->setDescription($this->description);
+            $this->annonce->setPrice($this->prix);
+            $this->annonce->setBudget($this->budget);
             $this->annonce->add();
             });
     }
