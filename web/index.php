@@ -12,12 +12,10 @@ use BotMan\BotMan\BotMan;
 use BotMan\BotMan\BotManFactory;
 use BotMan\BotMan\Drivers\DriverManager;
 
-use AgriBot\OnboardingConversation;
 use BotMan\BotMan\Messages\Incoming\Answer;
 use BotMan\BotMan\Messages\Outgoing\Actions\Button;
 use BotMan\BotMan\Messages\Outgoing\Question;
-use BotMan\Drivers\Facebook\Extensions\ButtonTemplate;
-use BotMan\Drivers\Facebook\Extensions\ElementButton;
+
 
 $config = [
     'facebook' => [
@@ -51,7 +49,22 @@ $botman->hears("acheteur", function (BotMan $bot) {
 });
 
 $botman->hears("deposer", function (BotMan $bot) {
-    $bot->reply(Question::create("Choix:")
+
+    $bot->ask('Quel est le titre de votre annonce?', function(Answer $answer) {
+        // Save result
+        $annonce = $answer->getText();
+    });
+
+    $bot->ask('Descrivez votre annonce?', function(Answer $answer) {
+        // Save result
+        $description = $answer->getText();
+    });
+
+    $bot->ask('Quel est votre prix au kilo?', function(Answer $answer) {
+        // Save result
+        $prix = $answer->getText();
+    });
+   /* $bot->reply(Question::create("Choix:")
         ->addButtons([
             Button::create("1-Titre de votre annonce")->value("1-Titre de votre annonce"),
             Button::create("2-Description de l'annonce")->value("2-Description de l'annonce"),
@@ -60,10 +73,10 @@ $botman->hears("deposer", function (BotMan $bot) {
             Button::create("5-Choisir une catégorie")->value("categorie"),
             Button::create("6-Délai de livraison")->value("livraison"),
             Button::create("7-Quel est le profit de votre entreprise?")->value("profit"),
-        ]));
+        ]));*/
 });
 
-$botman->hears("categorie", function (BotMan $bot) {
+/*$botman->hears("categorie", function (BotMan $bot) {
     $bot->reply(Question::create("Produit:")->addButtons([
         Button::create("Produit de saison")->value("saison"),
         Button::create("Produit hors saison")->value("hors"),
@@ -88,7 +101,7 @@ $botman->hears("profit", function (BotMan $bot) {
         Button::create("acheteur")->value("pacheteur"),
         Button::create("agriculteur")->value("pagriculteur"),
     ]));
-});
+});*/
 
 // Start listening
 $botman->listen();
