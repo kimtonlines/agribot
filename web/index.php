@@ -57,16 +57,15 @@ $botman->hears("acheteur", function (BotMan $bot) {
     );
 });
 
-$botman->hears("deposer", function (BotMan $bot) {
+$botman->hears("deposer", function (BotMan $bot) use ($botman) {
     $bot->startConversation(new OnboardingConversation);
-});
-
-$botman->hears('oui', function (BotMan $bot) {
-    $bot->reply(Question::create("Suivant:")->addButtons([
-        Button::create("Catégorie")->value("categorie"),
-        Button::create("Délai de livraison")->value("livraison"),
-        Button::create("Profil de l'Entreprise")->value("profil"),
-    ]));
+    $botman->hears('oui', function (BotMan $bot) {
+        $bot->reply(Question::create("Suivant:")->addButtons([
+            Button::create("Catégorie")->value("categorie"),
+            Button::create("Délai de livraison")->value("livraison"),
+            Button::create("Profil de l'Entreprise")->value("profil"),
+        ]));
+    });
 });
 
 $botman->hears('categorie', function (BotMan $bot) {
