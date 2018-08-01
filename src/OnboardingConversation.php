@@ -16,13 +16,13 @@ use BotMan\BotMan\Messages\Outgoing\Question;
 
 class OnboardingConversation extends Conversation
 {
-    public $annonce;
-
-    public $description;
 
         public function askAnnonce()
     {
         $this->ask('Quel est le titre de votre annoce?', function(Answer $answer) {
+            // Save result
+            $annonce = $answer->getText();
+            $this->say($annonce);
             $this->askDescription();
         });
     }
@@ -30,6 +30,10 @@ class OnboardingConversation extends Conversation
         public function askDescription()
     {
         $this->ask('Decrivez votre annonce', function(Answer $answer) {
+            // Save result
+            $description = $answer->getText();
+
+            $this->say($description);
         });
     }
 
