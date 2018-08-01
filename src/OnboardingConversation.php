@@ -9,6 +9,7 @@
 namespace AgriBot;
 
 
+use BotMan\BotMan\BotMan;
 use BotMan\BotMan\Messages\Conversations\Conversation;
 use BotMan\BotMan\Messages\Incoming\Answer;
 use BotMan\BotMan\Messages\Outgoing\Actions\Button;
@@ -63,7 +64,8 @@ class OnboardingConversation extends Conversation
         $this->ask('Choisir une catégorie?', function(Answer $answer) {
             // Save result
             $categorie = $answer->getText();
-                $this->bot->reply(ListTemplate::create()
+            $bot = $this->getBot();
+                $bot->reply(ListTemplate::create()
                     ->useCompactView()
                     ->addGlobalButton(ElementButton::create('voir plus')->url('http://agrivoire.herokuapp.com/sol-culture'))
                     ->addElement(
