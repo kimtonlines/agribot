@@ -36,8 +36,9 @@ class OnboardingConversation extends Conversation
     {
         $this->ask('Titre de votre annoce?', function(Answer $answer) {
             // Save result
-            $this->annonce->setTitle($answer->getText());
-            $slug = str_shuffle($answer->getText());
+            $titre = $answer->getText();
+            $this->annonce->setTitle($titre);
+            $slug = str_shuffle($titre);
             $this->annonce->setSlug($slug);
 
             $this->askDescription();
@@ -48,7 +49,8 @@ class OnboardingConversation extends Conversation
     {
         $this->ask('Decrivez votre annonce?', function(Answer $answer) {
             // Save result
-            $this->annonce->setDescription($answer->getText());
+            $description = $answer->getText();
+            $this->annonce->setDescription($description);
             $this->askPrix();
         });
     }
@@ -57,7 +59,8 @@ class OnboardingConversation extends Conversation
     {
         $this->ask('Prix au kilo?', function(Answer $answer) {
             // Save result
-            $this->annonce->setPrice($answer->getText());
+            $prix = $answer->getText();
+            $this->annonce->setPrice($prix);
 
             $this->askBudget();
         });
@@ -67,7 +70,8 @@ class OnboardingConversation extends Conversation
     {
         $this->ask('Votre budget?', function(Answer $answer) {
             // Save result
-            $this->annonce->setBudget($answer->getText());
+            $budget = $answer->getText();
+            $this->annonce->setBudget($$budget);
 
             $this->askContinuer();
         });
