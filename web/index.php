@@ -49,21 +49,24 @@ $botman->hears("acheteur", function (BotMan $bot) {
 
 $botman->hears("deposer", function (BotMan $bot) {
 
-    $bot->ask('Quel est le titre de votre annonce?', function (Answer $answer, $annonce) use ($bot) {
-        $bot->reply('{annonce}');
-        // Save result
-        if ($annonce) {
-            $bot->ask('Descrivez votre annonce?', function (Answer $answer, $description) use ($bot) {
-                $bot->reply('{description}');
-                if ($description) {
-                    $bot->ask('Quel est votre prix au kilo.?', function (Answer $answer) {
+    $bot->ask('Quel est le titre de votre annonce?', function (Answer $answer) {
 
-
-                    });
-                }
-            });
-        };
     });
+});
+
+$botman->hears('{annonce}', function (BotMan $bot, $annonce) {
+
+    if($annonce)
+    $bot->ask('Décrivez votre annonce?', function (Answer $answer) {
+    });
+});
+
+$botman->hears('{description}', function (BotMan $bot, $description) {
+
+    if($description)
+    $bot->ask('Quel est votre prix au kilo?', function (Answer $answer) {
+    });
+});
 
     /* $bot->reply(Question::create("Choix:")
          ->addButtons([
@@ -103,7 +106,7 @@ $botman->hears("deposer", function (BotMan $bot) {
             Button::create("agriculteur")->value("pagriculteur"),
         ]));
     });*/
-});
+
 
 // Start listening
 $botman->listen();
