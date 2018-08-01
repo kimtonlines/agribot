@@ -84,6 +84,8 @@ class OnboardingConversation extends Conversation
             $annonce->setUserId(1);
 
             $annonce->add();
+
+            $this->say($annonce->getTitle());
             // Save result
             $reponse = $answer->getText();
 
