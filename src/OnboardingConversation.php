@@ -55,32 +55,15 @@ class OnboardingConversation extends Conversation
             // Save result
             $budget = $answer->getText();
 
-            $this->askCtegorie();
+            $this->askContinuer();
         });
     }
 
-        public function askCtegorie()
+        public function askContinuer()
     {
-        $this->ask('Choisir une catégorie?', function(Answer $answer) {
+        $this->ask('Voulez vous continuer?', function(Answer $answer) {
             // Save result
-            $categorie = $answer->getText();
-            $bot = $this->getBot();
-                $bot->reply(ListTemplate::create()
-                    ->useCompactView()
-                    ->addGlobalButton(ElementButton::create('voir plus')->url('http://agrivoire.herokuapp.com/sol-culture'))
-                    ->addElement(
-                        Element::create('Produit de saison')
-                            ->image('https://agrivoire.herokuapp.com/public/pages/July2018/sack-309849_640-cropped.png')
-                            ->addButton(ElementButton::create('Choisir')
-                                ->payload('psaison')->type('postback'))
-                    )
-                    ->addElement(
-                        Element::create('Produit hors saison')
-                            ->image('https://agrivoire.herokuapp.com/public/pages/July2018/SugarCane-cropped.png')
-                            ->addButton(ElementButton::create('Choisir')
-                                ->payload('psaison')->type('postback'))
-                    )
-                );
+            $reponse = $answer->getText();
             });
     }
 
