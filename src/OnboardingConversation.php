@@ -21,21 +21,11 @@ use BotMan\Drivers\Facebook\Extensions\ListTemplate;
 
 class OnboardingConversation extends Conversation
 {
-        protected $annonce;
 
         protected $title;
         protected $description;
         protected $prix;
         protected $budget;
-
-        public function __construct()
-        {
-            $this->annonce = new Annonce();
-            $this->annonce->setEtatId(1);
-            $this->annonce->setCategoryId(1);
-            $this->annonce->setUserId(1);
-
-        }
 
     public function askAnnonce()
     {
@@ -83,13 +73,19 @@ class OnboardingConversation extends Conversation
             // Save result
             $reponse = $answer->getText();
 
-            $this->annonce->setTitle($this->title);
+            $annonce = new Annonce();
+
+            $annonce->setTitle($this->title);
             $slug = str_shuffle($this->title);
-            $this->annonce->setSlug($slug);
-            $this->annonce->setDescription($this->description);
-            $this->annonce->setPrice($this->prix);
-            $this->annonce->setBudget($this->budget);
-            $this->annonce->add();
+            $annonce->setSlug($slug);
+            $annonce->setDescription($this->description);
+            $annonce->setPrice($this->prix);
+            $annonce->setBudget($this->budget);
+            $annonce->setEtatId(1);
+            $annonce->setCategoryId(1);
+            $annonce->setUserId(1);
+
+            $annonce->add();
             });
     }
 
