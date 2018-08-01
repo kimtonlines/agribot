@@ -57,8 +57,27 @@ $botman->hears("acheteur", function (BotMan $bot) {
     );
 });
 
-$botman->hears("deposer", function (BotMan $bot) {
+$botman->hears("deposer", function (BotMan $bot) use ($botman) {
     $bot->startConversation(new OnboardingConversation);
+    $botman->hears("Catégorie?", function (BotMan $bot) {
+        $bot->reply(ListTemplate::create()
+            ->useCompactView()
+            ->addGlobalButton(ElementButton::create('voir plus')->url('http://agrivoire.herokuapp.com/sol-culture'))
+            ->addElement(
+                Element::create('Produit de saison')
+                    ->image('https://agrivoire.herokuapp.com/public/pages/July2018/sack-309849_640-cropped.png')
+                    ->addButton(ElementButton::create('Choisir')
+                        ->payload('psaison')->type('postback'))
+            )
+            ->addElement(
+                Element::create('Produit hors saison')
+                    ->image('https://agrivoire.herokuapp.com/public/pages/July2018/SugarCane-cropped.png')
+                    ->addButton(ElementButton::create('Choisir')
+                        ->payload('psaison')->type('postback'))
+            )
+        );
+    });
+
 
 });
 
