@@ -70,8 +70,6 @@ class OnboardingConversation extends Conversation
         public function askContinuer()
     {
         $this->ask('Voulez vous continuer?', function(Answer $answer) {
-            // Save result
-            $reponse = $answer->getText();
 
             $annonce = new Annonce();
 
@@ -86,6 +84,9 @@ class OnboardingConversation extends Conversation
             $annonce->setUserId(1);
 
             $annonce->add();
+            // Save result
+            $reponse = $answer->getText();
+
             });
     }
 
