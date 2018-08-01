@@ -17,6 +17,11 @@ use BotMan\BotMan\Messages\Incoming\Answer;
 use BotMan\BotMan\Messages\Outgoing\Actions\Button;
 use BotMan\BotMan\Messages\Outgoing\Question;
 
+use BotMan\BotMan\Cache\SymfonyCache;
+use Symfony\Component\Cache\Adapter\FilesystemAdapter;
+
+$adapter = new FilesystemAdapter();
+
 
 $config = [
     'facebook' => [
@@ -29,7 +34,7 @@ $config = [
 DriverManager::loadDriver(\BotMan\Drivers\Facebook\FacebookDriver::class);
 
 // Create BotMan instance
-$botman = BotManFactory::create($config);
+$botman = BotManFactory::create($config, new SymfonyCache($adapter));
 
 // Give the bot something to listen for.
 $botman->hears('demarer', function (BotMan $bot) {
