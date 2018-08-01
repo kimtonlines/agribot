@@ -49,15 +49,15 @@ $botman->hears("acheteur", function (BotMan $bot) {
 
 $botman->hears("deposer", function (BotMan $bot) {
 
-    $bot->ask('Quel est le titre de votre annonce?', function ($annonce) use ($bot) {
+    $bot->ask('Quel est le titre de votre annonce?', function (Answer $answer, $annonce) use ($bot) {
         $bot->reply('{annonce}');
         // Save result
         if ($annonce) {
-            $bot->ask('Descrivez votre annonce?', function ($description) use ($bot) {
+            $bot->ask('Descrivez votre annonce?', function (Answer $answer, $description) use ($bot) {
                 $bot->reply('{description}');
                 if ($description) {
-                    $bot->ask('Quel est votre prix au kilo?', function ($prix) use ($bot) {
-                        $bot->reply('{prix}');
+                    $bot->ask('Quel est votre prix au kilo.?', function (Answer $answer) {
+
 
                     });
                 }
