@@ -61,7 +61,7 @@ $botman->hears("deposer", function (BotMan $bot) use ($botman) {
     $bot->startConversation(new OnboardingConversation);
 });
 
-$botman->hears('.*(oui|Oui|ok|Ok|yes|Yes).*', function (BotMan $bot) {
+$botman->hears('oui', function (BotMan $bot) {
     $bot->reply(Question::create("Suivant:")->addButtons([
         Button::create("Catégorie")->value("categorie"),
         Button::create("Délai de livraison")->value("livraison"),
