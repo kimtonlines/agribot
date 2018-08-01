@@ -16,34 +16,33 @@ use BotMan\BotMan\Messages\Outgoing\Question;
 
 class OnboardingConversation extends Conversation
 {
-    public $firstname;
+    public $annonce;
 
-    public $email;
+    public $description;
 
-        public function askFirstname()
+        public function askAnnonce()
     {
-        $this->ask('Hello! What is your firstname?', function(Answer $answer) {
+        $this->ask('Quel est le titre de votre annoce?', function(Answer $answer) {
             // Save result
-            $this->firstname = $answer->getText();
-
-            $this->say('Nice to meet you '.$this->firstname);
-            $this->askEmail();
+            $this->annonce = $answer->getText();
+            $this->say($this->annonce);
+            $this->askDescription();
         });
     }
 
-        public function askEmail()
+        public function askDescription()
     {
-        $this->ask('One more thing - what is your email?', function(Answer $answer) {
+        $this->ask('Decrivez votre annonce', function(Answer $answer) {
             // Save result
-            $this->email = $answer->getText();
+            $this->description = $answer->getText();
 
-            $this->say('Great - that is all we need, '.$this->firstname);
+            $this->say($this->description);
         });
     }
 
     public function run()
     {
         // This will be called immediately
-        $this->askFirstname();
+        $this->askAnnonce();
     }
 }
