@@ -39,7 +39,7 @@ $botman = BotManFactory::create($config, new SymfonyCache($adapter));
 // Give the bot something to listen for.
 $botman->hears('demarer', function (BotMan $bot) {
 
-  $bot->reply(Question::create("Quick replie 3:")->addButtons([
+  $bot->reply(Question::create("Vous etes?")->addButtons([
       Button::create("Acheteur")->value("acheteur"),
       Button::create("Coopérative")->value("Coopérative"),
       Button::create("Agriculteur")->value("Agriculteur"),
@@ -47,7 +47,7 @@ $botman->hears('demarer', function (BotMan $bot) {
 });
 
 $botman->hears("acheteur", function (BotMan $bot) {
-    $bot->reply(Question::create("")->addButtons([
+    $bot->reply(Question::create("Annonce?")->addButtons([
         Button::create("Déposer une annonce")->value("deposer"),
         Button::create("Voir toutes les annonces")->value("voir"),
     ]));
