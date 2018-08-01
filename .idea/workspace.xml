@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="617e4617-33f3-4f90-8ded-07208426a732" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/src/OnboardingConversation.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/OnboardingConversation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,8 +40,8 @@
       <file leaf-file-name="OnboardingConversation.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/OnboardingConversation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+            <state relative-caret-position="276">
+              <caret line="31" column="71" selection-start-line="31" selection-start-column="71" selection-end-line="31" selection-end-column="71" />
               <folding>
                 <element signature="e#109#163#0#PHP" expanded="true" />
               </folding>
@@ -179,18 +178,18 @@
       <option name="presentableId" value="Default" />
       <updated>1533060756013</updated>
       <workItem from="1533060764819" duration="17433000" />
-      <workItem from="1533112226747" duration="5042000" />
+      <workItem from="1533112226747" duration="5155000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22475000" />
+    <option name="totallyTimeSpent" value="22588000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25340393" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25340393" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -320,8 +319,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/OnboardingConversation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+        <state relative-caret-position="276">
+          <caret line="31" column="71" selection-start-line="31" selection-start-column="71" selection-end-line="31" selection-end-column="71" />
           <folding>
             <element signature="e#109#163#0#PHP" expanded="true" />
           </folding>

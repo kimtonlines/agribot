@@ -23,9 +23,6 @@ class OnboardingConversation extends Conversation
         public function askAnnonce()
     {
         $this->ask('Quel est le titre de votre annoce?', function(Answer $answer) {
-            // Save result
-            $this->annonce = $answer->getText();
-            $this->say($this->annonce);
             $this->askDescription();
         });
     }
@@ -33,10 +30,6 @@ class OnboardingConversation extends Conversation
         public function askDescription()
     {
         $this->ask('Decrivez votre annonce', function(Answer $answer) {
-            // Save result
-            $this->description = $answer->getText();
-
-            $this->say($this->description);
         });
     }
 
