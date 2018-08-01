@@ -49,10 +49,8 @@ $botman->hears('demarer', function (BotMan $bot) {
 });
 
 $botman->hears("acheteur", function (BotMan $bot) {
-    $bot->reply(Question::create("Annonce?")
-        ->addButton(Button::create("Déposer une annonce")->value("deposer"))
-    );
     $bot->reply(ButtonTemplate::create("Annonce?")
+        ->addButton(ElementButton::create("Déposer une annonce")->type("deposer"))
         ->addButton(ElementButton::create("Déposer une annonce")->url("http://agrivoire.herokuapp.com/Annonce"))
     );
 });
