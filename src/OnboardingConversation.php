@@ -9,6 +9,7 @@
 namespace AgriBot;
 
 
+use BotMan\BotMan\BotMan;
 use BotMan\BotMan\Messages\Conversations\Conversation;
 use BotMan\BotMan\Messages\Incoming\Answer;
 use BotMan\BotMan\Messages\Outgoing\Actions\Button;
@@ -56,6 +57,26 @@ class OnboardingConversation extends Conversation
 
             //$this->askCtegorie();
             $this->say('Catégorie?');
+
+            $this->bot->hears("Catégorie?", function (BotMan $bot) {
+                $bot->reply(ListTemplate::create()
+                    ->useCompactView()
+                    ->addGlobalButton(ElementButton::create('voir plus')->url('http://agrivoire.herokuapp.com/sol-culture'))
+                    ->addElement(
+                        Element::create('Produit de saison')
+                            ->image('https://agrivoire.herokuapp.com/public/pages/July2018/sack-309849_640-cropped.png')
+                            ->addButton(ElementButton::create('Choisir')
+                                ->payload('psaison')->type('postback'))
+                    )
+                    ->addElement(
+                        Element::create('Produit hors saison')
+                            ->image('https://agrivoire.herokuapp.com/public/pages/July2018/SugarCane-cropped.png')
+                            ->addButton(ElementButton::create('Choisir')
+                                ->payload('psaison')->type('postback'))
+                    )
+                );
+            });
+
         });
     }
 
