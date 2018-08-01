@@ -30,9 +30,6 @@ DriverManager::loadDriver(\BotMan\Drivers\Facebook\FacebookDriver::class);
 // Create BotMan instance
 $botman = BotManFactory::create($config);
 
-global $annonce;
-global $description;
-global $prix;
 // Give the bot something to listen for.
 $botman->hears('demarer', function (BotMan $bot) {
 
@@ -55,10 +52,10 @@ $botman->hears("deposer", function (BotMan $bot) {
     $bot->ask('Quel est le titre de votre annonce?', function (Answer $answer) use ($bot) {
         // Save result
         $annonce = $answer->getText();
-        if ($answer->getText() == $annonce) {
+        if ($answer) {
             $bot->ask('Descrivez votre annonce?', function (Answer $answer) use ($bot) {
                 $description = $answer->getText();
-                if ($answer->getText() == $description) {
+                if ($answer) {
                     $bot->ask('Descrivez votre annonce?', function (Answer $answer) {
                         $description = $answer->getText();
 
