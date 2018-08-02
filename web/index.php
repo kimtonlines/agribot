@@ -35,7 +35,7 @@ $annonce->setEtatId(1);
 $annonce->setCategoryId(1);
 $annonce->setUserId(1);
 
-$annonce->add();
+dd($annonce->add());
 
 
 $config = [
