@@ -194,18 +194,18 @@ class Annonce
 
         $pdoStatement = $this->database->prepare
         ('
-          INSERT INTO annonces(title,description,budget,status,slug,category_id,user_id,price)
-          VALUES(:title,:description,:budget,:status,:slug,:category_id,:user_id,:price )
+          INSERT INTO annonces(title, description, budget, status, slug, category_id, user_id, price)
+          VALUES(:title, :description, :budget, :status, :slug, :category_id, :user_id, :price )
            ');
 
-        $pdoStatement->bindValue('title',$this->title);
-        $pdoStatement->bindValue('description',$this->description);
-        $pdoStatement->bindValue('budget',$this->budget);
-        $pdoStatement->bindValue('status',$this->status);
-        $pdoStatement->bindValue('slug',$this->slug);
-        $pdoStatement->bindValue('category_id',$this->category_id);
-        $pdoStatement->bindValue('user_id',$this->user_id);
-        $pdoStatement->bindValue('price',$this->price);
+        $pdoStatement->bindValue('title', $this->getTitle());
+        $pdoStatement->bindValue('description', $this->getDescription());
+        $pdoStatement->bindValue('budget', $this->getBudget());
+        $pdoStatement->bindValue('status', $this->getStatus());
+        $pdoStatement->bindValue('slug',  $this->getSlug());
+        $pdoStatement->bindValue('category_id', $this->getCategoryId());
+        $pdoStatement->bindValue('user_id', $this->getUserId());
+        $pdoStatement->bindValue('price', $this->getPrice());
 
         $res = $pdoStatement->execute();
 
