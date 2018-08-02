@@ -189,12 +189,14 @@ class Annonce
 
     public function add()
     {
+        $select = $this->database->query('SELECT * FROM annonces');
+        dd($select);
         $pdoStatement = $this->database->prepare
         ('
           INSERT INTO annonces (title, description, budget, status, slug, category_id, user_id, price)
           VALUES (:title, :description, :budget, :status, :slug, :category_id, :user_id, :price )
            ');
-dd($pdoStatement);
+
         $pdoStatement->bindParam('title',$this->title);
         $pdoStatement->bindParam('description',$this->description);
         $pdoStatement->bindParam('budget',$this->budget);
@@ -203,7 +205,7 @@ dd($pdoStatement);
         $pdoStatement->bindParam('category_id',$this->category_id);
         $pdoStatement->bindParam('user_id',$this->user_id);
         $pdoStatement->bindParam('price',$this->price);
-        dd($this->title);
+
         $pdoStatement->execute();
     }
 
