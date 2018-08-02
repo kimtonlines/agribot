@@ -37,22 +37,22 @@ $annonce->setEtatId(1);
 $annonce->setCategoryId(1);
 $annonce->setUserId(1);
 
-$pdoStatement = Database::$mysql->prepare
+$pdoStatement = Database::$mysql->query
 ('
           INSERT INTO annonces(title, description, budget, status, slug, category_id, user_id, price)
-          VALUES(:title, :description, :budget, :status, :slug, :category_id, :user_id, :price )
+          VALUES("Achat", "Achat de café", "200", "Acheteur", "achat", "1", "1", "5000")
            ');
 
-$pdoStatement->bindValue(':title', $annonce->getTitle());
+/*$pdoStatement->bindValue(':title', $annonce->getTitle());
 $pdoStatement->bindValue(':description', $annonce->getDescription());
 $pdoStatement->bindValue(':budget', $annonce->getBudget());
 $pdoStatement->bindValue(':status', $annonce->getStatus());
 $pdoStatement->bindValue(':slug',  $annonce->getSlug());
 $pdoStatement->bindValue(':category_id', $annonce->getCategoryId());
 $pdoStatement->bindValue(':user_id', $annonce->getUserId());
-$pdoStatement->bindValue(':price', $annonce->getPrice());
+$pdoStatement->bindValue(':price', $annonce->getPrice());*/
  
-$pdoStatement->execute();
+//$pdoStatement->execute();
 
 dd($annonce);
 
