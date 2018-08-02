@@ -197,15 +197,15 @@ class Annonce
           INSERT INTO annonces(title,description,budget,status,slug,category_id,user_id,price)
           VALUES(:title,:description,:budget,:status,:slug,:category_id,:user_id,:price )
            ');
-        dd($pdoStatement);
-        $pdoStatement->bindParam('title',$this->title);
-        $pdoStatement->bindParam('description',$this->description);
-        $pdoStatement->bindParam('budget',$this->budget);
-        $pdoStatement->bindParam('status',$this->status);
-        $pdoStatement->bindParam('slug',$this->slug);
-        $pdoStatement->bindParam('category_id',$this->category_id);
-        $pdoStatement->bindParam('user_id',$this->user_id);
-        $pdoStatement->bindParam('price',$this->price);
+
+        $pdoStatement->bindValue('title',$this->title);
+        $pdoStatement->bindValue('description',$this->description);
+        $pdoStatement->bindValue('budget',$this->budget);
+        $pdoStatement->bindValue('status',$this->status);
+        $pdoStatement->bindValue('slug',$this->slug);
+        $pdoStatement->bindValue('category_id',$this->category_id);
+        $pdoStatement->bindValue('user_id',$this->user_id);
+        $pdoStatement->bindValue('price',$this->price);
 
         $res = $pdoStatement->execute();
 
