@@ -190,7 +190,9 @@ class Annonce
     public function add()
     {
         $select = $this->database->query('SELECT * FROM annonces');
-        dd($select);
+        $res = $select->fetchAll();
+        dd($res);
+
         $pdoStatement = $this->database->prepare
         ('
           INSERT INTO annonces (title, description, budget, status, slug, category_id, user_id, price)
