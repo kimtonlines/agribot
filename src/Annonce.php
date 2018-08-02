@@ -194,7 +194,7 @@ class Annonce
           INSERT INTO annonces (title, description, budget, status, slug, category_id, user_id, price)
           VALUES (:title, :description, :budget, :status, :slug, :category_id, :user_id, :price )
            ');
-
+dd($pdoStatement);
         $pdoStatement->bindParam('title',$this->title);
         $pdoStatement->bindParam('description',$this->description);
         $pdoStatement->bindParam('budget',$this->budget);
