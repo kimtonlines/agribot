@@ -32,6 +32,7 @@ class Annonce
     {
         $this->database = new PDO('mysql:dbname=heroku_526741e4a3bcedf;host=us-cdbr-iron-east-04.cleardb.net', 'bc7b958cdd6a45', 'a82c899a');
         $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        dd($this->database);
     }
 
 

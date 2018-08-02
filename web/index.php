@@ -8,6 +8,7 @@
 
 require('../vendor/autoload.php');
 
+use AgriBot\Annonce;
 use AgriBot\OnboardingConversation;
 use BotMan\BotMan\BotMan;
 use BotMan\BotMan\BotManFactory;
@@ -22,6 +23,10 @@ use BotMan\Drivers\Facebook\Extensions\ListTemplate;
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 
 $adapter = new FilesystemAdapter();
+
+$annonce = new Annonce();
+
+var_dump($annonce);
 
 
 $config = [
