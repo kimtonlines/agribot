@@ -28,7 +28,7 @@ $annonce = new Annonce();
 
 $annonce->setSlug("kimt");
 
-var_dump($annonce->getSlug());
+dd($annonce);
 
 
 $config = [
