@@ -26,6 +26,10 @@ $adapter = new FilesystemAdapter();
 
 $annonce = new Annonce();
 
+$annonce->setSlug("kimt");
+
+$annonce->add();
+
 var_dump($annonce);
 
 
