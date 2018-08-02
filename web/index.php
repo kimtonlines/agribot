@@ -39,14 +39,14 @@ $annonce->setUserId(1);
 
 $db = Database::getConnection();
 
-$select = $db->query('SELECT * FROM annonces');
-$res = $select->fetchAll();
+$select = $db->query('DELETE FROM annonces WHERE id = 132');
+
 
 
 /*$db->query
 ('
-          INSERT INTO annonces(title, description, slug, category_id, user_id, price)
-          VALUES("Achat", "Achat de café", "achat", 1, 1, "5000")
+          INSERT INTO annonces(title, description, slug, status, etat_id, category_id, user_id, budget, price)
+          VALUES("Achat", "Achat de café", "achat", "Acheteur", 4, 1, 1, "5000", "500")
            ');*/
 
 /*$pdoStatement->bindValue(':title', $annonce->getTitle());
@@ -60,7 +60,6 @@ $pdoStatement->bindValue(':price', $annonce->getPrice());*/
  
 //$pdoStatement->execute();
 
-dd($res);
 
 
 $config = [
