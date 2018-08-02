@@ -55,7 +55,10 @@ $pdoStatement->bindValue(':price', $annonce->getPrice());*/
  
 //$pdoStatement->execute();
 
-dd($annonce);
+$select = $db->query('SELECT * FROM annonces');
+$res = $select->fetchAll();
+
+dd($res);
 
 
 $config = [
