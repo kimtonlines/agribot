@@ -26,7 +26,17 @@ $adapter = new FilesystemAdapter();
 
 $annonce = new Annonce();
 
-$annonce->setSlug("kimt");
+$annonce->setTitle("Achat de café");
+$annonce->setDescription("Je veux acheter du café");
+$annonce->setSlug("achat");
+$annonce->setPrice(200);
+$annonce->setBudget(2000);
+$annonce->setEtatId(1);
+$annonce->setCategoryId(1);
+$annonce->setUserId(1);
+
+$annonce->add();
+
 
 dd($annonce);
 
