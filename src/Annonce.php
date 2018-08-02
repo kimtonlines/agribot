@@ -198,14 +198,14 @@ class Annonce
           VALUES(:title, :description, :budget, :status, :slug, :category_id, :user_id, :price )
            ');
 
-        $pdoStatement->bindValue('title', $this->getTitle());
-        $pdoStatement->bindValue('description', $this->getDescription());
-        $pdoStatement->bindValue('budget', $this->getBudget());
-        $pdoStatement->bindValue('status', $this->getStatus());
-        $pdoStatement->bindValue('slug',  $this->getSlug());
-        $pdoStatement->bindValue('category_id', $this->getCategoryId());
-        $pdoStatement->bindValue('user_id', $this->getUserId());
-        $pdoStatement->bindValue('price', $this->getPrice());
+        $pdoStatement->bindValue(':title', $this->getTitle());
+        $pdoStatement->bindValue(':description', $this->getDescription());
+        $pdoStatement->bindValue(':budget', $this->getBudget());
+        $pdoStatement->bindValue(':status', $this->getStatus());
+        $pdoStatement->bindValue(':slug',  $this->getSlug());
+        $pdoStatement->bindValue(':category_id', $this->getCategoryId());
+        $pdoStatement->bindValue(':user_id', $this->getUserId());
+        $pdoStatement->bindValue(':price', $this->getPrice());
 
         $res = $pdoStatement->execute();
 
