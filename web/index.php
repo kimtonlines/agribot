@@ -39,9 +39,11 @@ $annonce->setUserId(1);
 
 $db = Database::getConnection();
 
-$select = $db->query('DELETE FROM annonces WHERE id = 133');
+$select = $db->query('SELECT * FROM annonces');
 
+$res = $select->fetchAll();
 
+dd($res);
 
 /*$db->query
 ('
