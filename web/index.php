@@ -38,11 +38,17 @@ $annonce->setCategoryId(1);
 $annonce->setUserId(1);
 
 $db = Database::getConnection();
-$db->query
+
+$select = $db->query('SELECT * FROM annonces');
+$res = $select->fetchAll();
+
+dd($res);
+
+/*$db->query
 ('
           INSERT INTO annonces(title, description, budget, slug, category_id, user_id, price)
           VALUES("Achat", "Achat de café", "200", "achat", "1", "1", "5000")
-           ');
+           ');*/
 
 /*$pdoStatement->bindValue(':title', $annonce->getTitle());
 $pdoStatement->bindValue(':description', $annonce->getDescription());
@@ -54,11 +60,6 @@ $pdoStatement->bindValue(':user_id', $annonce->getUserId());
 $pdoStatement->bindValue(':price', $annonce->getPrice());*/
  
 //$pdoStatement->execute();
-
-$select = $db->query('SELECT * FROM annonces');
-$res = $select->fetchAll();
-
-dd($res);
 
 
 $config = [
