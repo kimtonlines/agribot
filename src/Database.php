@@ -15,9 +15,11 @@ class Database
 {
     public static $mysql;
 
-    public function __construct()
+    public static function getConnection()
     {
         self::$mysql = new PDO('mysql:dbname=heroku_526741e4a3bcedf;host=us-cdbr-iron-east-04.cleardb.net', 'bc7b958cdd6a45', 'a82c899a');
         self::$mysql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        return self::$mysql;
     }
 }

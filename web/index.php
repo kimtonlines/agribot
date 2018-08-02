@@ -37,7 +37,8 @@ $annonce->setEtatId(1);
 $annonce->setCategoryId(1);
 $annonce->setUserId(1);
 
-$pdoStatement = Database::$mysql->query
+$db = Database::getConnection();
+$db->query
 ('
           INSERT INTO annonces(title, description, budget, slug, category_id, user_id, price)
           VALUES("Achat", "Achat de café", "200", "achat", "1", "1", "5000")
