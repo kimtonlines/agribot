@@ -43,11 +43,11 @@ $select = $db->query('SELECT * FROM annonces');
 $res = $select->fetchAll();
 
 
-$db->query
+/*$db->query
 ('
           INSERT INTO annonces(title, description, slug, category_id, user_id, price)
-          VALUES("Achat", "Achat de café", "achat", "1", "1", "5000")
-           ');
+          VALUES("Achat", "Achat de café", "achat", 1, 1, "5000")
+           ');*/
 
 /*$pdoStatement->bindValue(':title', $annonce->getTitle());
 $pdoStatement->bindValue(':description', $annonce->getDescription());
