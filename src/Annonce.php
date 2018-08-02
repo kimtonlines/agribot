@@ -203,7 +203,7 @@ class Annonce
         $pdoStatement->bindParam('category_id',$this->category_id);
         $pdoStatement->bindParam('user_id',$this->user_id);
         $pdoStatement->bindParam('price',$this->price);
-
+        dd($this->title);
         $pdoStatement->execute();
     }
 
