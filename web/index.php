@@ -9,6 +9,7 @@
 require('../vendor/autoload.php');
 
 use AgriBot\Annonce;
+use AgriBot\Database;
 use AgriBot\OnboardingConversation;
 use BotMan\BotMan\BotMan;
 use BotMan\BotMan\BotManFactory;
@@ -24,6 +25,7 @@ use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 
 $adapter = new FilesystemAdapter();
 
+
 $annonce = new Annonce();
 
 $annonce->setTitle("Achat de café");
@@ -35,7 +37,24 @@ $annonce->setEtatId(1);
 $annonce->setCategoryId(1);
 $annonce->setUserId(1);
 
-dd($annonce->add());
+$pdoStatement = Database::$mysql->prepare
+('
+          INSERT INTO annonces(title, description, budget, status, slug, category_id, user_id, price)
+          VALUES(:title, :description, :budget, :status, :slug, :category_id, :user_id, :price )
+           ');
+
+$pdoStatement->bindValue(':title', $annonce->getTitle());
+$pdoStatement->bindValue(':description', $annonce->getDescription());
+$pdoStatement->bindValue(':budget', $annonce->getBudget());
+$pdoStatement->bindValue(':status', $annonce->getStatus());
+$pdoStatement->bindValue(':slug',  $annonce->getSlug());
+$pdoStatement->bindValue(':category_id', $annonce->getCategoryId());
+$pdoStatement->bindValue(':user_id', $annonce->getUserId());
+$pdoStatement->bindValue(':price', $annonce->getPrice());
+ 
+$pdoStatement->execute();
+
+dd($annonce);
 
 
 $config = [

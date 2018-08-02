@@ -26,13 +26,13 @@ class Annonce
 
     private $price;
 
-    private $database;
+   /* private $database;
 
     public function __construct()
     {
         $this->database = new PDO('mysql:dbname=heroku_526741e4a3bcedf;host=us-cdbr-iron-east-04.cleardb.net', 'bc7b958cdd6a45', 'a82c899a');
         $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    }
+    }*/
 
 
     /**
@@ -187,7 +187,7 @@ class Annonce
         $this->price = $price;
     }
 
-    public function add()
+  /*  public function add()
     {
         //$select = $this->database->query('SELECT * FROM annonces');
         //$res = $select->fetchAll();
@@ -217,7 +217,7 @@ class Annonce
         {
             dd("Error");
         }
-    }
+    }*/
 
 }
 
