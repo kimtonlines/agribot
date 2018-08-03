@@ -240,16 +240,7 @@ class Annonce
         $pdoStatement->bindValue(':created_at', $this->created_at);
         $pdoStatement->bindValue(':updated_at', $this->updated_at);
 
-        $res = $pdoStatement->execute();
-
-        if ($res)
-        {
-            dd("Annonce ajoutée!");
-        }
-        else
-        {
-            dd("Error");
-        }
+       $pdoStatement->execute();
     }
 
 }

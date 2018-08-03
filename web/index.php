@@ -8,8 +8,6 @@
 
 require('../vendor/autoload.php');
 
-use AgriBot\Annonce;
-use AgriBot\Database;
 use AgriBot\OnboardingConversation;
 use BotMan\BotMan\BotMan;
 use BotMan\BotMan\BotManFactory;
@@ -24,45 +22,6 @@ use BotMan\Drivers\Facebook\Extensions\ListTemplate;
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 
 $adapter = new FilesystemAdapter();
-
-
-/*$annonce = new Annonce();
-
-$annonce->setTitle("Achat de café");
-$annonce->setDescription("Je veux acheter du café");
-$annonce->setSlug("achat");
-$annonce->setPrice(200);
-$annonce->setBudget(2000);
-$annonce->setEtatId(1);
-$annonce->setCategoryId(1);
-$annonce->setUserId(1);
-*/
-
-$db = Database::getConnection();
-
-$select = $db->query('DELETE FROM annonces WHERE id = 232');
-
-//$res = $select->fetchAll();
-
-//dd($res);
-/*
-       $db->query
-    ('
-          INSERT INTO annonces(title, description, slug, status, etat_id, category_id, user_id, budget, price, created_at, updated_at)
-          VALUES("Achat", "Achat de café", "achat", "Acheteur", 4, 1, 1, "5000", "500", "2018-08-03 00:49:48", "2018-08-03 00:49:48")
-    ');*/
-
-/*$pdoStatement->bindValue(':title', $annonce->getTitle());
-$pdoStatement->bindValue(':description', $annonce->getDescription());
-$pdoStatement->bindValue(':budget', $annonce->getBudget());
-$pdoStatement->bindValue(':status', $annonce->getStatus());
-$pdoStatement->bindValue(':slug',  $annonce->getSlug());
-$pdoStatement->bindValue(':category_id', $annonce->getCategoryId());
-$pdoStatement->bindValue(':user_id', $annonce->getUserId());
-$pdoStatement->bindValue(':price', $annonce->getPrice());*/
- 
-//$pdoStatement->execute();
-
 
 
 $config = [

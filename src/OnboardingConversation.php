@@ -70,7 +70,7 @@ class OnboardingConversation extends Conversation
 
         public function askContinuer()
     {
-        $this->ask('Voulez vous continuer?', function(Answer $answer) {
+        $this->ask('Voulez vous ajouter cette annonce?', function(Answer $answer) {
 
             $annonce = new Annonce();
             $date = $dt = new DateTime('now');
@@ -89,7 +89,7 @@ class OnboardingConversation extends Conversation
 
             $annonce->add();
 
-            //$this->say($annonce->getTitle());
+            $this->say("Annonce Ajouté avec succès!");
             // Save result
             $reponse = $answer->getText();
 
