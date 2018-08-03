@@ -84,7 +84,7 @@ class OnboardingConversation extends Conversation
             $annonce->setPrice($this->prix);
             $annonce->setBudget($this->budget);
             $annonce->setEtatId(4);
-            $annonce->setCategoryId(1);
+            $annonce->setCategoryId(5);
             $annonce->setUserId(1);
             $annonce->setStatus("Acheteurs");
             $annonce->setCreatedAt($now);
