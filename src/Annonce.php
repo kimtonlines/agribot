@@ -28,14 +28,6 @@ class Annonce
 
     private $price;
 
-    private $database;
-
-    public function __construct()
-    {
-        $this->database = new PDO('mysql:dbname=heroku_526741e4a3bcedf;host=us-cdbr-iron-east-04.cleardb.net', 'bc7b958cdd6a45', 'a82c899a');
-        $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    }
-
 
     /**
      * @return int
@@ -228,8 +220,9 @@ class Annonce
         //$select = $this->database->query('SELECT * FROM annonces');
         //$res = $select->fetchAll();
 
+        $db = Database::getConnection();
 
-        $pdoStatement = $this->database->prepare
+        $pdoStatement = $db->prepare
         ('
          INSERT INTO annonces(title, description, slug, status, etat_id, category_id, user_id, budget, price, created_at, updated_at)
           VALUES(:title, :description, :slug, :budget, :status, :etat_id,  :category_id, :user_id, :budget, :price, :created_at, :updated_at)
