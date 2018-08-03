@@ -73,7 +73,7 @@ class OnboardingConversation extends Conversation
         $this->ask('Voulez vous ajouter cette annonce?', function(Answer $answer) {
 
             $annonce = new Annonce();
-            $date = $dt = new DateTime('now');
+            $date = new DateTime('now');
             $slug = str_shuffle($this->title);
             $annonce->setTitle($this->title);
             $annonce->setSlug($slug);
