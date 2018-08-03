@@ -83,7 +83,7 @@ class OnboardingConversation extends Conversation
             $annonce->setEtatId(4);
             $annonce->setCategoryId(1);
             $annonce->setUserId(1);
-            $annonce->setStatus("Acheteur");
+            $annonce->setStatus("Acheteurs");
             $annonce->setCreatedAt($date);
             $annonce->setUpdatedAt($date);
 
