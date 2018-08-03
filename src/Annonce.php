@@ -19,6 +19,8 @@ class Annonce
     private $budget;
     private $status;
     private $slug;
+    private $created_at;
+    private $updated_at;
 
     private $etat_id;
     private $category_id;
@@ -26,13 +28,13 @@ class Annonce
 
     private $price;
 
-   /* private $database;
+    private $database;
 
     public function __construct()
     {
         $this->database = new PDO('mysql:dbname=heroku_526741e4a3bcedf;host=us-cdbr-iron-east-04.cleardb.net', 'bc7b958cdd6a45', 'a82c899a');
         $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    }*/
+    }
 
 
     /**
@@ -187,37 +189,75 @@ class Annonce
         $this->price = $price;
     }
 
-  /*  public function add()
+    /**
+     * @return mixed
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    /**
+     * @param mixed $created_at
+     */
+    public function setCreatedAt($created_at): void
+    {
+        $this->created_at = $created_at;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updated_at;
+    }
+
+    /**
+     * @param mixed $update_at
+     */
+    public function setUpdatedAt($updated_at): void
+    {
+        $this->updated_at = $updated_at;
+    }
+
+
+
+    public function add()
     {
         //$select = $this->database->query('SELECT * FROM annonces');
         //$res = $select->fetchAll();
 
+
         $pdoStatement = $this->database->prepare
         ('
-          INSERT INTO annonces(title, description, budget, status, slug, category_id, user_id, price)
-          VALUES(:title, :description, :budget, :status, :slug, :category_id, :user_id, :price )
+         INSERT INTO annonces(title, description, slug, status, etat_id, category_id, user_id, budget, price, created_at, updated_at)
+          VALUES(:title, :description, :slug, :budget, :status, :etat_id,  :category_id, :user_id, :budget, :price, :created_at, :updated_at)
            ');
 
-        $pdoStatement->bindValue(':title', $this->getTitle());
-        $pdoStatement->bindValue(':description', $this->getDescription());
-        $pdoStatement->bindValue(':budget', $this->getBudget());
-        $pdoStatement->bindValue(':status', $this->getStatus());
-        $pdoStatement->bindValue(':slug',  $this->getSlug());
-        $pdoStatement->bindValue(':category_id', $this->getCategoryId());
-        $pdoStatement->bindValue(':user_id', $this->getUserId());
-        $pdoStatement->bindValue(':price', $this->getPrice());
+        $pdoStatement->bindValue(':title', $this->title);
+        $pdoStatement->bindValue(':description', $this->description);
+        $pdoStatement->bindValue(':slug',  $this->slug);
+        $pdoStatement->bindValue(':budget', $this->budget);
+        $pdoStatement->bindValue(':status', $this->status);
+        $pdoStatement->bindValue(':category_id', $this-$this->category_id);
+        $pdoStatement->bindValue(':user_id', $this->user_id);
+        $pdoStatement->bindValue(':price', $this->price);
+        $pdoStatement->bindValue(':etat_id', $this->etat_id);
+        $pdoStatement->bindValue(':created_at', $this->created_at);
+        $pdoStatement->bindValue(':updated_at', $this->updated_at);
 
         $res = $pdoStatement->execute();
 
         if ($res)
         {
-            dd($res);
+            dd("Annonce ajoutée!");
         }
         else
         {
             dd("Error");
         }
-    }*/
+    }
 
 }
 

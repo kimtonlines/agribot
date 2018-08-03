@@ -71,21 +71,24 @@ class OnboardingConversation extends Conversation
     {
         $this->ask('Voulez vous continuer?', function(Answer $answer) {
 
-           /* $annonce = new Annonce();
+            $annonce = new Annonce();
 
-            $annonce->setTitle($this->title);
             $slug = str_shuffle($this->title);
+            $annonce->setTitle($this->title);
             $annonce->setSlug($slug);
             $annonce->setDescription($this->description);
             $annonce->setPrice($this->prix);
             $annonce->setBudget($this->budget);
-            $annonce->setEtatId(1);
+            $annonce->setEtatId(4);
             $annonce->setCategoryId(1);
             $annonce->setUserId(1);
+            $annonce->setStatus("Acheteur");
+            $annonce->setCreatedAt("2018-08-03 00:49:48");
+            $annonce->setUpdatedAt("2018-08-03 00:49:48");
 
             $annonce->add();
 
-            $this->say($annonce->getTitle());*/
+            //$this->say($annonce->getTitle());
             // Save result
             $reponse = $answer->getText();
 
