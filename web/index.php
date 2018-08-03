@@ -57,7 +57,7 @@ $botman->hears("deposer", function (BotMan $bot) {
     $bot->startConversation(new OnboardingConversation);
 });
 
-$botman->hears('oui', function (BotMan $bot) {
+/*$botman->hears('oui', function (BotMan $bot) {
     $bot->reply(Question::create("Suivant:")->addButtons([
         Button::create("Catégorie")->value("categorie"),
         Button::create("Délai de livraison")->value("livraison"),
@@ -94,7 +94,7 @@ $botman->hears('categorie', function (BotMan $bot) {
                     ->payload('plegumes')->type('postback'))
         )
     );
-});
+});*/
 
 
 
