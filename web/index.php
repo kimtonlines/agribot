@@ -36,15 +36,16 @@ $annonce->setBudget(2000);
 $annonce->setEtatId(1);
 $annonce->setCategoryId(1);
 $annonce->setUserId(1);
+*/
 
 $db = Database::getConnection();
 
-//$select = $db->query('DELETE FROM annonces WHERE id = 192');
+$select = $db->query('SELECT * FROM annonces');
 
-//$res = $select->fetchAll();
+$res = $select->fetchAll();
 
-//dd($res);
-
+dd($res);
+/*
        $db->query
     ('
           INSERT INTO annonces(title, description, slug, status, etat_id, category_id, user_id, budget, price, created_at, updated_at)
