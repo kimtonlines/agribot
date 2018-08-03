@@ -26,7 +26,7 @@ use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 $adapter = new FilesystemAdapter();
 
 
-$annonce = new Annonce();
+/*$annonce = new Annonce();
 
 $annonce->setTitle("Achat de café");
 $annonce->setDescription("Je veux acheter du café");
@@ -49,7 +49,7 @@ $db = Database::getConnection();
     ('
           INSERT INTO annonces(title, description, slug, status, etat_id, category_id, user_id, budget, price, created_at, updated_at)
           VALUES("Achat", "Achat de café", "achat", "Acheteur", 4, 1, 1, "5000", "500", "2018-08-03 00:49:48", "2018-08-03 00:49:48")
-    ');
+    ');*/
 
 /*$pdoStatement->bindValue(':title', $annonce->getTitle());
 $pdoStatement->bindValue(':description', $annonce->getDescription());
