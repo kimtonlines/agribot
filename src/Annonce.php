@@ -225,7 +225,7 @@ class Annonce
         $pdoStatement = $db->prepare
         ('
          INSERT INTO annonces(title, description, slug, status, etat_id, category_id, user_id, budget, price, created_at, updated_at)
-          VALUES(:title, :description, :slug, :budget, :status, :etat_id,  :category_id, :user_id, :budget, :price, :created_at, :updated_at)
+          VALUES(:title, :description, :slug, :status, :etat_id,  :category_id, :user_id, :budget, :price, :created_at, :updated_at)
            ');
 
         $pdoStatement->bindValue(':title', $this->title);
