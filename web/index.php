@@ -24,8 +24,9 @@ use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 $adapter = new FilesystemAdapter();
 
 $date = new DateTime('now');
+$now = $date->format("Y-m-d H:i:s");
 
-dd($date);
+dd($now);
 
 $config = [
     'facebook' => [
