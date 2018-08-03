@@ -92,7 +92,7 @@ class OnboardingConversation extends Conversation
 
             $annonce->add();
 
-            $this->say("Annonce ajouté avec succès!");
+            $this->say("Votre annonce a été ajoutée avec succès!");
             // Save result
             $reponse = $answer->getText();
 
