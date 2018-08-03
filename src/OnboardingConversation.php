@@ -18,6 +18,7 @@ use BotMan\BotMan\Messages\Outgoing\Question;
 use BotMan\Drivers\Facebook\Extensions\Element;
 use BotMan\Drivers\Facebook\Extensions\ElementButton;
 use BotMan\Drivers\Facebook\Extensions\ListTemplate;
+use DateTime;
 
 class OnboardingConversation extends Conversation
 {
@@ -72,7 +73,7 @@ class OnboardingConversation extends Conversation
         $this->ask('Voulez vous continuer?', function(Answer $answer) {
 
             $annonce = new Annonce();
-
+            $date = $dt = new DateTime('now');
             $slug = str_shuffle($this->title);
             $annonce->setTitle($this->title);
             $annonce->setSlug($slug);
@@ -83,8 +84,8 @@ class OnboardingConversation extends Conversation
             $annonce->setCategoryId(1);
             $annonce->setUserId(1);
             $annonce->setStatus("Acheteur");
-            $annonce->setCreatedAt("2018-08-03 00:49:48");
-            $annonce->setUpdatedAt("2018-08-03 00:49:48");
+            $annonce->setCreatedAt($date);
+            $annonce->setUpdatedAt($date);
 
             $annonce->add();
 
