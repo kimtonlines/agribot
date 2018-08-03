@@ -233,7 +233,7 @@ class Annonce
         $pdoStatement->bindValue(':slug',  $this->slug);
         $pdoStatement->bindValue(':budget', $this->budget);
         $pdoStatement->bindValue(':status', $this->status);
-        $pdoStatement->bindValue(':category_id', $this-$this->category_id);
+        $pdoStatement->bindValue(':category_id', $this->category_id);
         $pdoStatement->bindValue(':user_id', $this->user_id);
         $pdoStatement->bindValue(':price', $this->price);
         $pdoStatement->bindValue(':etat_id', $this->etat_id);
