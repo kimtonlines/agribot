@@ -92,7 +92,7 @@ class OnboardingConversation extends Conversation
 
             $annonce->add();
 
-            $this->say("Votre annonce a été ajoutée avec succès sur http://agrivoire.herokuapp.com");
+            $this->say("Votre annonce a été ajoutée avec succès sur http://agrivoire.herokuapp.com/Annonce");
             // Save result
             $reponse = $answer->getText();
 
