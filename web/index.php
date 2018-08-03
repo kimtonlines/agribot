@@ -23,11 +23,6 @@ use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 
 $adapter = new FilesystemAdapter();
 
-$date = new DateTime('now');
-$now = $date->format("Y-m-d H:i:s");
-
-dd($now);
-
 $config = [
     'facebook' => [
         'token' => 'EAAc7UhlqCQABAJNbh6YQ3XUHsfhnVPa6dZCEx13InSEmghTzPTBWWEqLd7CVSslSkBKcjs8WwEmdtZCX13qjpW60NE44dvoLJKDm0NCZCKGYq8h5yRuqIKe7kC5524ApKGQNhJUHUVXPxjI8luzebYLZBcWctoxK1kDZAShcZAaBKjoVdB68ga',
